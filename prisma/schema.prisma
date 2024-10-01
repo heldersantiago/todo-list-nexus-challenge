@@ -10,16 +10,15 @@ datasource db {
   url      = "mysql://root:Root.dev%40180404@localhost:3306/todoListNest"
 }
 
-
 model User {
-  id    Int     @default(autoincrement()) @id
+  id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
   posts Post[]
 }
 
 model Post {
-  id        Int      @default(autoincrement()) @id
+  id        Int      @id @default(autoincrement())
   title     String
   content   String?
   published Boolean? @default(false)
